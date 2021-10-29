@@ -11,12 +11,16 @@ contract YourContract {
   address public owner;
 
   constructor() {
+    // about msg.sender:
+    // https://cryptozombies.io/en/lesson/2/chapter/3
     owner = msg.sender;
-    // what should we do on deploy?
   }
 
   function setPurpose(string memory newPurpose) public {
+      // about require:
+      // https://cryptozombies.io/en/lesson/2/chapter/4
       require( msg.sender == owner, "NOT THE OWNER!");
+
       purpose = newPurpose;
       console.log(msg.sender,"set purpose to",purpose);
       //emit SetPurpose(msg.sender, purpose);
