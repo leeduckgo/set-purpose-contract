@@ -8,15 +8,17 @@ contract PurposeHandler {
   //event SetPurpose(address sender, string purpose);
 
   string public purpose = "Building Unstoppable Apps";
-  address public owner;
+  address public owner = 0x7EF99B0E5bEb8ae42DbF126B40b87410a440a32a;
+  // input 
 
   constructor() {
-    // about msg.sender:
-    // https://cryptozombies.io/en/lesson/2/chapter/3
-    owner = msg.sender;
+
+    // owner = msg.sender;
   }
 
   function setPurpose(string memory newPurpose) public {
+      // about msg.sender:
+      // https://cryptozombies.io/en/lesson/2/chapter/3
       // about require:
       // https://cryptozombies.io/en/lesson/2/chapter/4
       require( msg.sender == owner, "NOT THE OWNER!");
